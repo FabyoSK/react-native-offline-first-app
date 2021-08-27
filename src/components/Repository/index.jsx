@@ -2,12 +2,21 @@ import React from 'react';
 
 import { FontAwesome } from '@expo/vector-icons';
 
-import { Container, Name, Description, Stat, Stats, StatCount } from './styles';
+import {
+  Container,
+  Name,
+  Description,
+  Stat,
+  Stats,
+  StatCount,
+  Refresh,
+  RefreshText
+} from './styles';
 
-const Repository = ({ data }) => (
+const Repository = ({ data, onRefresh }) => (
   <Container>
     <Name>
-      {data.title}
+      {data.name}
     </Name>
     <Description>
       {data.description}
@@ -34,7 +43,16 @@ const Repository = ({ data }) => (
         </StatCount>
       </Stat>
     </Stats>
-
+    <Refresh onPress={onRefresh}>
+      <FontAwesome
+        name="refresh"
+        size={16}
+        color="#7159c1"
+      />
+      <RefreshText>
+        Refresh
+      </RefreshText>
+    </Refresh>
   </Container>
 );
 

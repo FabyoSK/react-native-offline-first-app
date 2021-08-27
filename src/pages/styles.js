@@ -25,7 +25,7 @@ export const Form = styled.View`
 `;
 
 export const Input = styled.TextInput.attrs({
-  placeHolderTextColor: '#999'
+  placeholderTextColor: '#999'
 })`
   flex: 1;
   padding: 12px 15px;
@@ -33,6 +33,7 @@ export const Input = styled.TextInput.attrs({
   font-size: 16px;
   color: #333;
   background: #FFF;
+  border: 2px solid ${(props) => (props.error ? '#FF7272' : '#FFf')};
 `;
 
 export const Submit = styled.TouchableOpacity`
@@ -45,7 +46,7 @@ export const Submit = styled.TouchableOpacity`
 
 export const List = styled.FlatList.attrs({
   contentContainerStyle: { paddingHorizontal: 20 },
-  showVerticalScrollIndicator: false
+  showsVerticalScrollIndicator: false
 })`
   margin-top: 20px;
 `;
